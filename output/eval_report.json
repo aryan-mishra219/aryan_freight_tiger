@@ -1,0 +1,318 @@
+{
+  "golden_evaluation": {
+    "suite_passed": true,
+    "golden_cases_passed": 10,
+    "golden_cases_total": 10,
+    "invariants": {
+      "invariant_a_decoy_rejection": {
+        "passed": true,
+        "violations": []
+      },
+      "invariant_b_contract_integrity": {
+        "passed": true
+      },
+      "invariant_c_schema_columns": {
+        "passed": true,
+        "columns": [
+          "route",
+          "week_of",
+          "cost_per_tonne_km",
+          "vs_own_history",
+          "vs_similar_routes",
+          "flagged",
+          "matched_note_id",
+          "reason"
+        ]
+      }
+    },
+    "case_results": [
+      {
+        "id": "CASE-01",
+        "route": "Delhi-Jaipur",
+        "week_of": "2024-11-11",
+        "status": "PASS",
+        "cost_per_tonne_km": {
+          "actual": 4.17,
+          "expected": 4.17,
+          "pass": true
+        },
+        "flagged": {
+          "actual": "Yes",
+          "expected": "Yes",
+          "pass": true
+        },
+        "matched_note_id": {
+          "actual": "",
+          "expected": "",
+          "pass": true
+        },
+        "details": {
+          "own_history_pass": true,
+          "peer_routes_pass": true,
+          "reason_mentions_pass": true
+        }
+      },
+      {
+        "id": "CASE-02",
+        "route": "Ahmedabad-Mumbai",
+        "week_of": "2025-01-20",
+        "status": "PASS",
+        "cost_per_tonne_km": {
+          "actual": 3.29,
+          "expected": 3.29,
+          "pass": true
+        },
+        "flagged": {
+          "actual": "No (justified)",
+          "expected": "No (justified)",
+          "pass": true
+        },
+        "matched_note_id": {
+          "actual": "N002",
+          "expected": "N002",
+          "pass": true
+        },
+        "details": {
+          "own_history_pass": true,
+          "peer_routes_pass": true,
+          "reason_mentions_pass": true
+        }
+      },
+      {
+        "id": "CASE-03",
+        "route": "Mumbai-Pune",
+        "week_of": "2025-09-15",
+        "status": "PASS",
+        "cost_per_tonne_km": {
+          "actual": 3.98,
+          "expected": 3.98,
+          "pass": true
+        },
+        "flagged": {
+          "actual": "Yes",
+          "expected": "Yes",
+          "pass": true
+        },
+        "matched_note_id": {
+          "actual": "",
+          "expected": "",
+          "pass": true
+        },
+        "details": {
+          "own_history_pass": true,
+          "peer_routes_pass": true,
+          "reason_mentions_pass": true
+        }
+      },
+      {
+        "id": "CASE-04",
+        "route": "Chennai-Bangalore",
+        "week_of": "2025-02-24",
+        "status": "PASS",
+        "cost_per_tonne_km": {
+          "actual": 3.58,
+          "expected": 3.58,
+          "pass": true
+        },
+        "flagged": {
+          "actual": "No (justified)",
+          "expected": "No (justified)",
+          "pass": true
+        },
+        "matched_note_id": {
+          "actual": "N001",
+          "expected": "N001",
+          "pass": true
+        },
+        "details": {
+          "own_history_pass": true,
+          "peer_routes_pass": true,
+          "reason_mentions_pass": true
+        }
+      },
+      {
+        "id": "CASE-05",
+        "route": "Chennai-Bangalore",
+        "week_of": "2025-03-03",
+        "status": "PASS",
+        "cost_per_tonne_km": {
+          "actual": 3.48,
+          "expected": 3.48,
+          "pass": true
+        },
+        "flagged": {
+          "actual": "No (justified)",
+          "expected": "No (justified)",
+          "pass": true
+        },
+        "matched_note_id": {
+          "actual": "N001",
+          "expected": "N001",
+          "pass": true
+        },
+        "details": {
+          "own_history_pass": true,
+          "peer_routes_pass": true,
+          "reason_mentions_pass": true
+        }
+      },
+      {
+        "id": "CASE-06",
+        "route": "Chennai-Bangalore",
+        "week_of": "2025-03-10",
+        "status": "PASS",
+        "cost_per_tonne_km": {
+          "actual": 3.57,
+          "expected": 3.57,
+          "pass": true
+        },
+        "flagged": {
+          "actual": "Yes",
+          "expected": "Yes",
+          "pass": true
+        },
+        "matched_note_id": {
+          "actual": "",
+          "expected": "",
+          "pass": true
+        },
+        "details": {
+          "own_history_pass": true,
+          "peer_routes_pass": true,
+          "reason_mentions_pass": true
+        }
+      },
+      {
+        "id": "CASE-07",
+        "route": "Chennai-Bangalore",
+        "week_of": "2025-03-17",
+        "status": "PASS",
+        "cost_per_tonne_km": {
+          "actual": 3.47,
+          "expected": 3.47,
+          "pass": true
+        },
+        "flagged": {
+          "actual": "Yes",
+          "expected": "Yes",
+          "pass": true
+        },
+        "matched_note_id": {
+          "actual": "",
+          "expected": "",
+          "pass": true
+        },
+        "details": {
+          "own_history_pass": true,
+          "peer_routes_pass": true,
+          "reason_mentions_pass": true
+        }
+      },
+      {
+        "id": "CASE-08",
+        "route": "Delhi-Jaipur",
+        "week_of": "2024-11-18",
+        "status": "PASS",
+        "cost_per_tonne_km": {
+          "actual": 4.09,
+          "expected": 4.09,
+          "pass": true
+        },
+        "flagged": {
+          "actual": "Yes",
+          "expected": "Yes",
+          "pass": true
+        },
+        "matched_note_id": {
+          "actual": "",
+          "expected": "",
+          "pass": true
+        },
+        "details": {
+          "own_history_pass": true,
+          "peer_routes_pass": true,
+          "reason_mentions_pass": true
+        }
+      },
+      {
+        "id": "CASE-09",
+        "route": "Mumbai-Delhi",
+        "week_of": "2025-05-12",
+        "status": "PASS",
+        "cost_per_tonne_km": {
+          "actual": 2.28,
+          "expected": 2.28,
+          "pass": true
+        },
+        "flagged": {
+          "actual": "No (justified)",
+          "expected": "No (justified)",
+          "pass": true
+        },
+        "matched_note_id": {
+          "actual": "N003",
+          "expected": "N003",
+          "pass": true
+        },
+        "details": {
+          "own_history_pass": true,
+          "peer_routes_pass": true,
+          "reason_mentions_pass": true
+        }
+      },
+      {
+        "id": "CASE-10",
+        "route": "Mumbai-Pune",
+        "week_of": "2025-10-27",
+        "status": "PASS",
+        "cost_per_tonne_km": {
+          "actual": 4.07,
+          "expected": 4.07,
+          "pass": true
+        },
+        "flagged": {
+          "actual": "Yes",
+          "expected": "Yes",
+          "pass": true
+        },
+        "matched_note_id": {
+          "actual": "",
+          "expected": "",
+          "pass": true
+        },
+        "details": {
+          "own_history_pass": true,
+          "peer_routes_pass": true,
+          "reason_mentions_pass": true
+        }
+      }
+    ]
+  },
+  "reproducibility": {
+    "runs_count": 3,
+    "is_core_identical": true,
+    "is_full_file_identical": false,
+    "hashes": [
+      {
+        "run": 1,
+        "path": "output/reproducibility/run_1.csv",
+        "full_file_sha256": "341d73c8e3fae75477c2a39448c2dde7565e05afb0fb59cb3ad87ee9f36f5ae2",
+        "core_columns_sha256": "06954c3e536747200f24c73ee1a98fd65ba48de401ffcf6a0bd6f5b236968dd4"
+      },
+      {
+        "run": 2,
+        "path": "output/reproducibility/run_2.csv",
+        "full_file_sha256": "a316f92e1adfcac21764dd7f18ae39bd325cd8f68fe4e1253469f418709379a1",
+        "core_columns_sha256": "06954c3e536747200f24c73ee1a98fd65ba48de401ffcf6a0bd6f5b236968dd4"
+      },
+      {
+        "run": 3,
+        "path": "output/reproducibility/run_3.csv",
+        "full_file_sha256": "341d73c8e3fae75477c2a39448c2dde7565e05afb0fb59cb3ad87ee9f36f5ae2",
+        "core_columns_sha256": "06954c3e536747200f24c73ee1a98fd65ba48de401ffcf6a0bd6f5b236968dd4"
+      }
+    ],
+    "diff_run1_vs_run2_rows": 3,
+    "diff_run1_vs_run3_rows": 0
+  }
+}

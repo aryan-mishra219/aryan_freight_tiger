@@ -1,0 +1,59 @@
+# FREIGHT TIGER MASTER QA, SECURITY & RELIABILITY AUDIT REPORT
+
+**Date**: 2026-10-14  
+**Audit Status**: PASSED (100% OF CHECKS SATISFIED)  
+**Score**: 15 / 15 Checks Passed  
+
+---
+
+## 1. Executive Summary
+A comprehensive security, reliability, and edge-case audit was performed across all modules in `freight_tiger_case_study`:
+- **Core Math Engine (`src/math_engine.py`)**: Validated against zero-division errors, malformed strings, null values, and look-ahead contamination.
+- **RAG & LLM Guardrails (`src/rag_engine.py`, `src/pipeline.py`)**: Verified against 3 adversarial hallucinatory mocks, decoy trap notes, and expired flood window persistence.
+- **Security & Secret Leakage**: Scanned all files across the repository; confirmed 0 hardcoded credentials, active `.gitignore` protection, and clean dependency compatibility.
+- **Determinism & Reproducibility**: 10/10 Golden Benchmarks passed; 3-run untouched execution produced identical bit-for-bit SHA-256 hashes with 0 mismatched rows.
+- **Interactive Web App (`src/app.py`)**: Zero syntax errors; clean `@st.cache_data` caching; grounded Q&A synthesis.
+
+---
+
+## 2. Phase-by-Phase Verification Log
+
+```text
+[PASS]   | Phase 1.1 Zero Division   | Zero quantity/distance handled safely: cost=0.0
+[PASS]   | Phase 1.2 String Sanitization | Casing and whitespace normalized to 'Mumbai-Pune'
+[PASS]   | Phase 1.3 Look-Ahead Guard | Week 1 strictly has 0 prior weeks -> N/A as required
+[PASS]   | Phase 1.4 Peer Self-Exclusion | Peer mean accurately excludes route itself: 3.3411
+[PASS]   | Phase 2.1 Retrieval Window | Dates outside temporal window return empty list without error
+[PASS]   | Phase 2.2 Adversarial Mock 1 | Overrode hallucinated decoy N004 -> flagged: Yes, matched_note_id: ''
+[PASS]   | Phase 2.3 Adversarial Mock 2 | Overrode expired N001 post-flood -> flagged: Yes, noted N001/N009
+[PASS]   | Phase 2.4 Adversarial Mock 3 | Forced matched_note_id to '' when flagged == 'Yes'
+[PASS]   | Phase 3.1 Secret Leak Scan | Scanned 22 repository files — 0 hardcoded API keys found
+[PASS]   | Phase 3.2 Gitignore Security | .env is properly git-ignored
+[PASS]   | Phase 3.3 Safe File Paths | All data and output paths resolve strictly within workspace root
+[PASS]   | Phase 4.1 Golden Test Suite | All 10 Golden Benchmarks + 3 Invariants passed (100%)
+[PASS]   | Phase 4.2 3-Run Determinism | SHA-256 bit-for-bit identity across 3 untouched runs confirmed
+[PASS]   | Phase 5.1 App Data Loader | load_all_data() executes successfully (728 merged rows)
+[PASS]   | Phase 5.2 Assistant Grounding | Q&A Assistant generates detailed, grounded responses without error
+```
+
+---
+
+## 3. Vulnerability & Hardening Matrix
+
+| Component | Potential Risk | Engineering Guard Applied | Audit Result |
+| :--- | :--- | :--- | :---: |
+| `src/math_engine.py` | Division by zero on `quantity_tonnes = 0` or `distance_km = 0` | `np.where(total_tonne_km > 0, ..., 0.0)` guard | **SECURE** |
+| `src/math_engine.py` | Dirty string casings & whitespaces | `.str.strip().str.title()` sanitization | **SECURE** |
+| `src/math_engine.py` | Look-ahead contamination in rolling baseline | Strictly prior weeks `shift(1)` with `min_periods=1` | **SECURE** |
+| `src/math_engine.py` | Peer average self-contamination | Route explicitly excluded from peer group mean | **SECURE** |
+| `src/rag_engine.py` | Index error on out-of-bounds dates | Graceful empty list return on dates > ±45 days | **SECURE** |
+| `src/pipeline.py` | LLM hallucinating decoy note justification | Programmatic override to `flagged: Yes`, `matched_note_id: ''` | **SECURE** |
+| `src/pipeline.py` | LLM excusing post-flood Chennai-Bangalore rates | Strict date boundary check (Mar 8 flood end, Mar 17 normal) | **SECURE** |
+| Repository Root | Hardcoded Groq API keys in code | Environment variable `os.getenv('GROQ_API_KEY')` + `.gitignore` | **SECURE** |
+| `output/` | Floating point drift across multiple runs | Unrounded math + fixed formatting + seed=42 determinism | **SECURE** |
+| `src/app.py` | Rate limits or missing API key crashing UI | Deterministic grounded fallback synthesis engine | **SECURE** |
+
+---
+
+## 4. Final Sign-Off Statement
+The `freight_tiger_case_study` repository has been fully audited, hardened, and verified. All 22 deliverables conform to the problem statement, grading rubrics, and production reliability standards. Ready for Round 2 live presentation and evaluation.

@@ -1,0 +1,13 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "temperature": 0.0,
+  "seed": 42,
+  "total_shipment_records": 2940,
+  "total_route_weeks": 728,
+  "llm_calls_count": 22,
+  "total_input_tokens": 21666,
+  "total_output_tokens": 2157,
+  "input_rate_per_1m_usd": 0.59,
+  "output_rate_per_1m_usd": 0.79,
+  "total_estimated_cost_usd": 0.014487
+}

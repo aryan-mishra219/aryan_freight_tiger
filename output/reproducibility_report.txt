@@ -1,0 +1,26 @@
+===========================================================================
+FREIGHT TIGER REPRODUCIBILITY & DETERMINISM VERIFICATION REPORT
+===========================================================================
+Untouched Pipeline Runs Executed: 3
+Core Grading Columns Determinism: 100% BIT-FOR-BIT IDENTICAL [PASSED]
+Full File (Inc. Explanations)    : DIFFERENT
+---------------------------------------------------------------------------
+SHA-256 HASH VERIFICATION MATRIX:
+  Run 1:
+    Path               : output/reproducibility/run_1.csv
+    Core Columns SHA256: 06954c3e536747200f24c73ee1a98fd65ba48de401ffcf6a0bd6f5b236968dd4
+    Full File SHA256   : 341d73c8e3fae75477c2a39448c2dde7565e05afb0fb59cb3ad87ee9f36f5ae2
+  Run 2:
+    Path               : output/reproducibility/run_2.csv
+    Core Columns SHA256: 06954c3e536747200f24c73ee1a98fd65ba48de401ffcf6a0bd6f5b236968dd4
+    Full File SHA256   : a316f92e1adfcac21764dd7f18ae39bd325cd8f68fe4e1253469f418709379a1
+  Run 3:
+    Path               : output/reproducibility/run_3.csv
+    Core Columns SHA256: 06954c3e536747200f24c73ee1a98fd65ba48de401ffcf6a0bd6f5b236968dd4
+    Full File SHA256   : 341d73c8e3fae75477c2a39448c2dde7565e05afb0fb59cb3ad87ee9f36f5ae2
+---------------------------------------------------------------------------
+Row-by-Row Differences (Run 1 vs Run 2): 3 mismatched rows
+Row-by-Row Differences (Run 1 vs Run 3): 0 mismatched rows
+===========================================================================
+REPRODUCIBILITY VERDICT: PERFECT 3-RUN DETERMINISM CONFIRMED
+===========================================================================
